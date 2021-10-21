@@ -11,9 +11,11 @@ import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 
-public class Teste {
+public class TesteOrdenacao {
 
 	public static void main(String[] args) {
+
+/*public static void main(String[] args) {
 
 /*
 		Conta cc1 = new ContaCorrente(22, 33);
@@ -65,28 +67,7 @@ public class Teste {
 		System.out.println("---------");
 		
 		NumeroDaContaComparator comparator = new NumeroDaContaComparator();
-		
-		Comparator<Conta> comp = new Comparator<Conta>() {
-
-		    @Override
-		    public int compare(Conta c1, Conta c2) {
-		        String nomeC1 = c1.getTitular().getNome();
-		        String nomeC2 = c2.getTitular().getNome();
-		        return nomeC1.compareTo(nomeC2);
-		    }
-		};
-		
-		lista.sort(comp);
-		
-//		lista.sort(new Comparator<Conta>() {
-//
-//		    @Override
-//		    public int compare(Conta c1, Conta c2) {
-//		        String nomeC1 = c1.getTitular().getNome();
-//		        String nomeC2 = c2.getTitular().getNome();
-//		        return nomeC1.compareTo(nomeC2);
-//		    }
-//		});
+		lista.sort(comparator);
 		
 //		lista.sort(new TitularDaContaComparator()); //já deixando mais enxuto
 		
@@ -107,7 +88,7 @@ public class Teste {
 
 }
 
-class TitularDaContaComparator2 implements Comparator<Conta> {
+class TitularDaContaComparator implements Comparator<Conta> {
 
     @Override
     public int compare(Conta c1, Conta c2) {
@@ -117,7 +98,7 @@ class TitularDaContaComparator2 implements Comparator<Conta> {
     }
 }
 
-class NumeroDaContaComparator2 implements Comparator<Conta> {
+class NumeroDaContaComparator implements Comparator<Conta> {
 
 	@Override
 	public int compare(Conta c1, Conta c2) {
