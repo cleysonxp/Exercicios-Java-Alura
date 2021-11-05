@@ -21,20 +21,25 @@ public class TesteEscrita {
         Reader isr = new InputStreamReader(fis);
         BufferedReader br = new BufferedReader(isr);
 
-        OutputStream fos = System.out;
+        OutputStream fos = new FileOutputStream("lorem2.txt");
         Writer osw = new OutputStreamWriter(fos);
         BufferedWriter bw = new BufferedWriter(osw);
+        
+        bw.write("lorem impusm hfkjsdhakjfhjsdkhfajkfjkhsjhfs");
+        bw.newLine();
+        bw.newLine();
+        bw.write("teste");
 
-        String linha = br.readLine();
-
-        while (linha != null && !linha.isEmpty()) {
-            bw.write(linha);
-            bw.newLine();
-            bw.flush();
-            linha = br.readLine();
-        }
-
-        br.close();
+//        String linha = br.readLine();
+//
+//        while (linha != null && !linha.isEmpty()) {
+//            bw.write(linha);
+//            bw.newLine();
+//            bw.flush();
+//            linha = br.readLine();
+//        }
+//
+//        br.close();
         bw.close();
     
 	}
