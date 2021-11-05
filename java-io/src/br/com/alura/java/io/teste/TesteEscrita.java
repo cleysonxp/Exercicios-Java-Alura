@@ -12,34 +12,37 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.Writer;
+import java.net.Socket;
 
 public class TesteEscrita {
 
 	public static void main(String[] args) throws IOException {
+		
+		Socket s = new Socket();
 
-		InputStream fis = System.in;
+		InputStream fis = s.getInputStream(); //System.in; // new FileInputStream("lorem2.txt);
         Reader isr = new InputStreamReader(fis);
         BufferedReader br = new BufferedReader(isr);
+        
+//      bw.write("lorem impusm hfkjsdhakjfhjsdkhfajkfjkhsjhfs");
+//      bw.newLine();
+//      bw.newLine();
+//      bw.write("teste");
 
-        OutputStream fos = new FileOutputStream("lorem2.txt");
+        OutputStream fos = s.getOutputStream(); //System.out;//new FileOutputStream("lorem2.txt");
         Writer osw = new OutputStreamWriter(fos);
         BufferedWriter bw = new BufferedWriter(osw);
-        
-        bw.write("lorem impusm hfkjsdhakjfhjsdkhfajkfjkhsjhfs");
-        bw.newLine();
-        bw.newLine();
-        bw.write("teste");
 
-//        String linha = br.readLine();
-//
-//        while (linha != null && !linha.isEmpty()) {
-//            bw.write(linha);
-//            bw.newLine();
-//            bw.flush();
-//            linha = br.readLine();
-//        }
-//
-//        br.close();
+        String linha = br.readLine();
+
+        while (linha != null && !linha.isEmpty()) {
+            bw.write(linha);
+            bw.newLine();
+            bw.flush();
+            linha = br.readLine();
+        }
+
+        br.close();
         bw.close();
     
 	}
