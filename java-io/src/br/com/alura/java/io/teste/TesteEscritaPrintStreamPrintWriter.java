@@ -23,6 +23,8 @@ public class TesteEscritaPrintStreamPrintWriter {
 					
 //		BufferedWriter bw = new BufferedWriter(new FileWriter("lorem2.txt"));
 		
+		long ini =  System.currentTimeMillis();
+		
 		PrintWriter pw = new PrintWriter("lorem.txt");
 
 		pw.println("Teste Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod");		
@@ -31,6 +33,10 @@ public class TesteEscritaPrintStreamPrintWriter {
 		pw.print("Teste tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
 
 		pw.close();
+		
+		long end = System.currentTimeMillis();
+		
+		 System.out.println("Passaram " + (end - ini) + " milissegundos");
 
 	}
 }
