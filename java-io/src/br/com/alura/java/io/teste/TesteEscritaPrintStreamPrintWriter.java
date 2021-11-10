@@ -25,9 +25,10 @@ public class TesteEscritaPrintStreamPrintWriter {
 		
 		long ini =  System.currentTimeMillis();
 		
-		PrintWriter pw = new PrintWriter("lorem.txt");
+//		PrintWriter pw = new PrintWriter("lorem.txt");
+		PrintWriter pw = new PrintWriter("lorem2.txt", "UTF-8");
 
-		pw.println("Teste Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod");		
+		pw.println("ÁTeste Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod");		
 		pw.println("Teste tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
 		pw.println();
 		pw.print("Teste tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");

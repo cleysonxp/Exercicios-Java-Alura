@@ -5,13 +5,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Reader;
 
 public class TesteLeitura {
 
 	public static void main(String[] args) throws IOException {
 
 		FileInputStream fis = new FileInputStream("finan.txt");
-		InputStreamReader isr = new InputStreamReader(fis);
+//		InputStreamReader isr = new InputStreamReader(fis);
+		Reader isr = new InputStreamReader(fis, "UTF-8");
 		BufferedReader br = new BufferedReader(isr);
 
 		String linha = br.readLine();
