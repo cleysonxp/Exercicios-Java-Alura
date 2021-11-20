@@ -1,10 +1,13 @@
 package br.com.alura;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class Curso {
@@ -13,6 +16,7 @@ public class Curso {
 	private String instrutor;
 	private List<Aula> aulas = new LinkedList<Aula>();
 	private Set<Aluno> alunos = new HashSet<>();
+	private Map<Integer, Aluno> matriculaParaAluno = new HashMap<>();
 
 	public Curso(String nome, String instrutor) {
 		this.nome = nome;
@@ -46,6 +50,7 @@ public class Curso {
 
 	public void matricula(Aluno aluno) {
 		this.alunos.add(aluno);
+		this.matriculaParaAluno.put(aluno.getMatricula(), aluno);
 	}
 
 	public Set<Aluno> getAlunos() {
@@ -59,6 +64,12 @@ public class Curso {
 	@Override
 	public String toString() {
 		return "[Curso:" + this.getNome() + ",tempo total:" + this.getTempoTotal() + ", aulas: [" + this.aulas + "] ]";
+	}
+
+	public Aluno buscaMatricula(int numero) {
+		if(!matriculaParaAluno.containsKey(numero))
+			throw new NoSuchElementException();
+		return matriculaParaAluno.get(numero);
 	}
 
 }

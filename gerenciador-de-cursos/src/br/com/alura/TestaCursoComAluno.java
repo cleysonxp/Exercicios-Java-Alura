@@ -16,10 +16,12 @@ public class TestaCursoComAluno {
 		Aluno a1 = new Aluno("Rodrigo Turini", 34672);
 		Aluno a2 = new Aluno("Guilherme Silveira", 5617);
 		Aluno a3 = new Aluno("Mauricio Aniche", 17645);
+		Aluno a4 = new Aluno("Paulo Silveira", 5617);
 
 		javaColecoes.matricula(a1);
 		javaColecoes.matricula(a2);
 		javaColecoes.matricula(a3);
+		javaColecoes.matricula(a4);
 
 		System.out.println("Todos os alunos matriculados: ");
 		Set<Aluno> alunos = javaColecoes.getAlunos();
@@ -37,7 +39,7 @@ public class TestaCursoComAluno {
 		System.out.println(javaColecoes.estaMatriculado(a1));
 
 		System.out.println();
-		String nome = "Rodrigo Turini";
+//		String nome = "Rodrigo Turini";
 		Aluno turini = new Aluno("Rodrigo Turini", 34672);
 		System.out.println("Esse Turini existe?");
 		System.out.println(javaColecoes.estaMatriculado(turini));
