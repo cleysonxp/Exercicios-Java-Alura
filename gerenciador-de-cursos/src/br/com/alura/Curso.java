@@ -30,11 +30,11 @@ public class Curso {
 	public String getInstrutor() {
 		return instrutor;
 	}
-	
+
 	public void adiciona(Aula aula) {
 		this.aulas.add(aula);
 	}
-	
+
 	public int getTempoTotal() {
 		return this.aulas.stream().mapToInt(Aula::getTempo).sum(); // evoluções do Java 8
 //		int tempoTotal = 0;
@@ -43,17 +43,22 @@ public class Curso {
 //		}
 //		return tempoTotal;
 	}
-	
-	public void matricula(Aluno aluno){
-	    this.alunos.add(aluno);
+
+	public void matricula(Aluno aluno) {
+		this.alunos.add(aluno);
 	}
-	
+
 	public Set<Aluno> getAlunos() {
-	    return Collections.unmodifiableSet(alunos);
+		return Collections.unmodifiableSet(alunos);
 	}
-	
-	 @Override
+
+	public boolean estaMatriculado(Aluno aluno) {
+		return this.alunos.contains(aluno);
+	}
+
+	@Override
 	public String toString() {
-		 return "[Curso:"+ this.getNome()+",tempo total:"+ this.getTempoTotal()+ ", aulas: ["+ this.aulas+"] ]";
+		return "[Curso:" + this.getNome() + ",tempo total:" + this.getTempoTotal() + ", aulas: [" + this.aulas + "] ]";
 	}
+
 }
