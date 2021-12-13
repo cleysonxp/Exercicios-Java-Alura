@@ -11,8 +11,8 @@
 	Lista de empresas: <br />
 	<ul>
 	<%
-		List<Empresa> lista = (List<Empresa>)request.getAttribute("empresas");
-		for (Empresa empresa : lista) {
+		List<Empresa> lista2 = (List<Empresa>)request.getAttribute("empresas");
+		for (Empresa empresa : lista2) {
 	%>
 		<li><%= empresa.getNome() %></li>
 	<%
