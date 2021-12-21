@@ -40,4 +40,13 @@ private static Integer chaveSequencial = 1;
 		}		
 	}
 
+	public Empresa buscaEmpresaPelaId(Integer id) {
+		for (Empresa empresa : lista) {
+			if(empresa.getId() == id) {
+				return empresa;
+			}
+		}
+		return null;
+	}
+
 }
