@@ -47,10 +47,16 @@ public class NovaEmpresaServlet extends HttpServlet {
 		
 //		PrintWriter out = response.getWriter();
 //		out.println("<html><body>"+nomeEmpresa+"</body></html>");
-		// chamar o JPS
-		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		
 		request.setAttribute("empresa", empresa.getNome());
-		rd.forward(request, response);
+		
+		response.sendRedirect("listaEmpresas");
+		
+		// chamar o JPS
+//		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+//		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
+//		request.setAttribute("empresa", empresa.getNome());
+//		rd.forward(request, response);
 	}
 
 }
