@@ -1,7 +1,6 @@
 package br.com.alura.gerenciadorM.servelt;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,10 +10,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.alura.gerenciadorM.modelo.Banco;
+import br.com.alura.gerenciadorM.modelo.Empresa;
+
 /**
  * Servlet implementation class ListaEmpresasServlet
  */
-@WebServlet("/listaEmpresas")
+//@WebServlet("/listaEmpresas")
 public class ListaEmpresasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
