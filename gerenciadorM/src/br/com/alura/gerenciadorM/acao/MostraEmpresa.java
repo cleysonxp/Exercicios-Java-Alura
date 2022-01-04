@@ -10,20 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciadorM.modelo.Banco;
 import br.com.alura.gerenciadorM.modelo.Empresa;
 
-public class MostraEmpresa {
+public class MostraEmpresa implements Acao {
 
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String paramId = request.getParameter("id");
 		Integer id = Integer.parseInt(paramId);
-		
+
 		Banco banco = new Banco();
 		Empresa empresa = banco.buscaEmpresaPelaId(id);
 
 		request.setAttribute("empresa", empresa);
-		RequestDispatcher rd = request.getRequestDispatcher("/formAlterarEmpresa.jsp"); 
-		rd.forward(request, response);
-		
+		return "forward:formAlterarEmpresa.jsp";
+
 	}
 
 }
